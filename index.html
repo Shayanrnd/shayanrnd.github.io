@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Shayan Rahiminezhad's Portfolio</title>
+		<link rel="icon" href="./public/favicon.ico" sizes="32x32">
+		<link href="./style.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- NAVBAR -->
+<nav style="
+    width:100%;
+    background:#1f1f1f;
+    color:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3);
+    box-sizing:border-box;
+">
+    <div style="font-size:22px; font-weight:bold;">Portfolio</div>
+</nav>
+
+
+
+		<!-- Main Wrapper to hold everything -->
+		<div style="display: flex; justify-content: flex-end;">
+			<div class="page-container">
+
+				<!-- LEFT SIDEBAR: Profile & Progress -->
+				<aside class="sidebar-left">
+					<div class="profile-image-container">
+						<img class="profile-image" src="./public/Profile_Image.png" alt="Dr. Shayan Rahiminezhad">
+						<p class="profile-desc"><b>Shayan Rahiminezhad</b></p>
+						<div class="profile-bio" style="line-height:1.8; font-size:14px; color:#444;">
+							<p style="margin:0;"><strong>Doctorate of Veterinary medicine</strong>
+							Science & Research branch Azad(Srbiau) University, Tehran, Iran</p>
+							<p style="margin:6px 0 0 0; font-style:italic; color:#666;">
+								Enthusiast in Precision Livestock Farming(PLF)
+							</p>
+						</div>
+					</div>
+					<!-- Progress bar -->
+					<div class="progress-circles-container">
+
+						<div style="
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f8fafc, #eef2ff);
+        border: 1px solid #e5e7eb;
+        font-size: 12.5px;
+        color: #374151;
+      ">
+							<div style="font-weight:700; margin-bottom:8px; color:#111827;">
+								DataScience Skills
+							</div>
+							<div style="display:flex; flex-wrap:wrap; gap:6px;">
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Excel</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Pyside</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Bash</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Pandas Numpy</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">HTML CSS Js</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Front-End Frameworks</span>
+							</div>
+						</div>
+
+						<div class="progress-circle red main-circle">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45"></circle>
+								<circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 60;"></circle>
+							</svg>
+							<div class="percentage-text">10%</div>
+						</div>
+						<div style="
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f8fafc, #eef2ff);
+        border: 1px solid #e5e7eb;
+        font-size: 12.5px;
+        color: #374151;
+      ">
+							<div style="font-weight:700; margin-bottom:8px; color:#111827;">
+								Interdisciplinary Skills
+							</div>
+							<div style="display:flex; flex-wrap:wrap; gap:6px;">
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Veterinary medicine</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Infographics</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">Research</span>
+							</div>
+						</div>
+						<div class="progress-circle green main-circle">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45"></circle>
+								<circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 62;"></circle>
+							</svg>
+							<div class="percentage-text">25%</div>
+						</div>
+						<div style="
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f8fafc, #eef2ff);
+        border: 1px solid #e5e7eb;
+        font-size: 12.5px;
+        color: #374151;
+      ">
+							<div style="font-weight:700; margin-bottom:8px; color:#111827;">
+								Extra Skills
+							</div>
+							<div style="display:flex; flex-wrap:wrap; gap:6px;">
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">A</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">B</span>
+								<span style="padding:4px 8px; background:#fff; border-radius:999px; border:1px solid #e5e7eb;">C</span>
+							</div>
+						</div>
+
+						<div class="progress-circle blue main-circle">
+							<svg viewBox="0 0 100 100">
+								<circle class="bg" cx="50" cy="50" r="45"></circle>
+								<circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 28.3;"></circle>
+							</svg>
+							<div class="percentage-text">30%</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+			<!-- MIDDLE CONTENT -->
+			<main class="main-content">
+
+				<section class="typing-container">
+					<h1 class="typing-text">Let's approach DataScience towards Veterinary medicine</h1>
+					<p style="
+                display: inline-block;
+                margin: 0;
+                font-weight: 700;
+                font-size: 28px;
+                background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+              ">
+						1)Collect <br>
+						2)Model <br>
+						3)Deploy <br>
+					</p>
+				</section>
+
+				<h2 class="section-title">Recent DataScience Projects</h2>
+				<div class="grid">
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/Lameness.jpeg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Model Lameness (Toe-In Toe-Out Classification) with OpenMMLab</p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);"><h3>Project 1</h3><p>Clinic & Hospital Managment System(Offline part)</p></div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/Crowdtesting.jpg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Crowdsource from Veterinary aspects</p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/Diss.jpeg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Bromelain Neuroprotective effects investigation on Cerebellum after REM Sleep Deprivation in Rat</p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/Infographics.jpg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p></p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/features-of-hospital-management-system.jpg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Data Collection first issue in Veterinary medicine vs all others medicine</p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/LanguageLearning.webp" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Articulation in new era(Ai)</p>
+						</div>
+					</div>
+					<div class="card" style="background: rgb(231, 76, 60);">
+						<!--img -->
+						<img src="./public/latex1.jpg" alt="Project Image" style="width: 100%; height: 200px; object-fit: cover;">
+						<!--Text -->
+						<div style="padding: 15px;">
+							<h3 style="margin-top: 0;">Project 1</h3>
+							<p>Digital Data & Annotation Data</p>
+						</div>
+					</div>
+				</div>
+				<h2 class="section-title">Recent Interdisciplinary Projects</h2>
+				<div class="grid">
+				</div>
+
+				<h2 class="section-title">Recent Outside Projects</h2>
+				<div class="grid">
+					<div class="card" style="background: rgb(52, 152, 219);"><h3>Project 2</h3><p>TOEFL Preparation</p></div>
+				</div>
+
+				<footer>
+					<p>Let's collaborate!</p>
+					<div class="social-links">
+						<div class="social-links">
+							<a href="https://x.com/shayanrnd99"><img src="./public/Screenshot From 2026-05-26 13-10-03.png" alt="Twitter"></a>
+							<a href="https://t.me/shayanrnd"><img src="./public/Screenshot From 2026-05-29 17-30-20.png" alt="Telegram"></a>
+							<a href="mailto:shayanrnd@yahoo.com?"><img src="./public/Screenshot From 2026-05-29 17-37-47.png" alt="Email"></a>
+							<a href="#"><img src="./public/Screenshot From 2026-05-29 17-35-55.png" alt="Instagram"></a>
+							<a href="#"><img src="./public/Screenshot From 2026-05-29 17-32-40.png" alt="GitHub"></a>
+							<a href="#"><img src="./public/Screenshot From 2026-05-29 17-34-02.png" alt="LinkedIn"></a>
+						</div>
+					</div>
+					<p>&copy; 2026 Shayan's Portfolio</p>
+				</footer>
+			</main>
+
+			<!-- RIGHT SIDEBAR: Timeline -->
+			<aside class="timeline-outline">
+				<h2 class="outline-title">Outline</h2>
+				<ul class="timeline">
+					<li><a href="#intro"><span>01</span>
+					Introduction</a></li>
+					<li><a href="#step1"><span>02</span>
+					Planning</a></li>
+					<li><a href="#step2"><span>03</span>
+					Design</a></li>
+					<li><a href="#step3"><span>04</span>
+					Implementation</a></li>
+					<li><a href="#conclusion"><span>05</span>
+					Conclusion</a></li>
+				</ul>
+			</aside>
+		</div>
+	</body>
+</html>
