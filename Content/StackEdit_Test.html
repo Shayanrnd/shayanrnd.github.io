@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Welcome file</title>
+		<link rel="stylesheet" href="https://stackedit.io/style.css">
+	</head>
+
+	<body class="stackedit">
+		<aside style="border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05); background-color: #ffffff; max-width: 300px; margin: 0 auto; text-align: center; font-family: sans-serif;">
+
+			<h2 style="margin: 0 0 15px 0; font-size: 16px; font-weight: 700; color: #111827; border-bottom: 1px solid #f3f4f6; padding-bottom: 10px;">
+				Outline
+			</h2>
+
+			<ul style="list-style: none; padding: 0; margin: 0;">
+				<li style="margin-bottom: 10px;">
+					<a href="#ها-بنیان-و-ساختار-database-approach" style="text-decoration: none; color: #4b5563; font-size: 14px; font-weight: 500;">Introduction</a>
+				</li>
+				<li style="margin-bottom: 10px;">
+					<a href="#طراحی-مفهومی-conceptual-design" style="text-decoration: none; color: #4b5563; font-size: 14px; font-weight: 500;">Step 1 – Planning</a>
+				</li>
+				<li style="margin-bottom: 10px;">
+					<a href="#موتور-محرکه-پردازش-و-منطق-backend-approach" style="text-decoration: none; color: #4b5563; font-size: 14px; font-weight: 500;">Step 2 – Design</a>
+				</li>
+				<li style="margin-bottom: 10px;">
+					<a href="#javascript-پویایی-و-تعامل" style="text-decoration: none; color: #4b5563; font-size: 14px; font-weight: 500;">Step 3 – Implementation</a>
+				</li>
+				<li style="margin: 0;">
+					<a href="#ها-طراحی-api-commands--orders" style="text-decoration: none; color: #4b5563; font-size: 14px; font-weight: 500;">Conclusion</a>
+				</li>
+			</ul>
+		</aside>
+
+		<div class="stackedit__html"><p>تصور کنید شایان، ما در حال ساخت یک <strong>سیستم هوشمند</strong>
+			هستیم که قرار است داده‌ها را جمع‌آوری، پردازش و به شکل‌های مختلف به کاربران نهایی نمایش دهد. این سیستم، قلب تپنده یک کسب و کار است و برای اینکه به درستی کار کند، داده‌ها باید سفری منظم و دقیق را طی کنند. این سفر را می‌توانیم به سه بخش اصلی تقسیم کنیم: <strong>پشت صحنه داده‌ها (Database-Approach)</strong>، <strong>موتور محرکه (Backend-Approach)</strong>
+			و <strong>ویترین جذاب (Front-End-Approach)</strong>.</p>
+		<h1 id="پشت-صحنه-داده‌ها-بنیان-و-ساختار-database-approach">1. پشت صحنه داده‌ها: بنیان و ساختار (Database-Approach)</h1>
+		<p>قبل از هر کاری، باید خانه‌ای امن و منظم برای داده‌هایمان بسازیم. اینجاست که <strong>استقرار زیرساخت‌های داده (Data Infrastructure as Code)</strong>
+			وارد عمل می‌شود و ما را قادر می‌سازد تا دیتابیس‌ها و انبارهای داده را به صورت خودکار و با ابزارهایی مانند <strong>Terraform</strong>
+			یا <strong>Pulumi</strong>
+			بسازیم و مدیریت کنیم.</p>
+		<h3 id="الف.-طراحی-مفهومی-conceptual-design">الف. طراحی مفهومی (Conceptual Design)</h3>
+		<p>سفر با یک ایده آغاز می‌شود: داده‌ها چه چیزهایی هستند و قرار است چه اطلاعاتی را ذخیره کنند؟</p>
+		<ul>
+			<li>
+				<p><strong>انتخاب و مدیریت ذخیره‌سازی:</strong>
+				اول تصمیم می‌گیریم که داده‌هایمان در کجا زندگی کنند: یک <strong>Data Warehouse</strong>
+				برای گزارش‌های ساختاریافته، یک <strong>Data Lake</strong>
+				برای داده‌های خام و متنوع، یا یک <strong>Lakehouse</strong>
+				که ترکیبی از هر دو است.</p>
+			</li>
+			<li>
+				<p><strong>تعریف موجودیت‌ها (Entities) و روابط:</strong>
+				موجودیت‌ها (مانند “کاربران”، “محصولات”، “سفارشات”) و ارتباطشان با یکدیگر را مشخص می‌کنیم.</p>
+			</li>
+			<li>
+				<p><strong>نمودار ER (ER Diagram):</strong>
+				یک نقشه بصری از این موجودیت‌ها و روابطشان می‌کشیم.</p>
+			</li>
+		</ul>
+		<h3 id="ب.-طراحی-منطقی-logical-design-طرح‌ریزی-ساختار">ب. طراحی منطقی (Logical Design): طرح‌ریزی ساختار</h3>
+		<p>حالا زمان آن است که نقشه را به یک طرح دقیق تبدیل کنیم:</p>
+		<ul>
+			<li>
+				<p><strong>طراحی مدل داده (Schema):</strong>
+				موجودیت‌ها را به جداول، ویژگی‌ها را به ستون‌ها، و روابط را به کلیدهای خارجی تبدیل می‌کنیم.</p>
+			</li>
+			<li>
+				<p><strong>نرمال‌سازی (Normalization):</strong>
+				جداول را به گونه‌ای سازماندهی می‌کنیم که هیچ داده‌ای تکراری نباشد و بهینه‌ترین حالت ذخیره‌سازی را داشته باشیم (مثلاً 1NF, 2NF, 3NF).</p>
+			</li>
+			<li>
+				<p><strong>تعریف انواع داده (Data Types) و محدودیت‌ها:</strong>
+				برای هر ستون، نوع داده (عدد، متن، تاریخ) و قوانینی مانند <code>NOT NULL</code>
+				یا <code>UNIQUE</code>
+				را تعیین می‌کنیم.</p>
+			</li>
+			<li>
+				<p><strong>کلیدها (Keys):</strong>
+				کلیدهای اصلی برای شناسایی منحصر به فرد هر رکورد و کلیدهای خارجی برای ایجاد ارتباط بین جداول را مشخص می‌کنیم.</p>
+			</li>
+		</ul>
+		<h3 id="ج.-طراحی-فیزیکی-physical-design-اجرای-نهایی">ج. طراحی فیزیکی (Physical Design): اجرای نهایی</h3>
+		<p>و در نهایت، خانه داده‌ها ساخته می‌شود:</p>
+		<ul>
+			<li>
+				<p><strong>انتخاب DBMS:</strong>
+				سیستم مدیریت دیتابیس مناسب (مثل MySQL, PostgreSQL) را انتخاب می‌کنیم.</p>
+			</li>
+			<li>
+				<p><strong>پیاده‌سازی: (CRUD)</strong>
+				امکان ایجاد، خواندن، به‌روزرسانی و حذف داده‌ها (<code>Create</code>, <code>Read</code>, <code>Update</code>, <code>Delete</code>) را در دیتابیس فراهم می‌آوریم.</p>
+			</li>
+			<li>
+				<p><strong>بهینه‌سازی عملکرد (Optimization):</strong>
+				ساختار ذخیره‌سازی و ایندکس‌ها را برای سرعت بخشیدن به جستجوها طراحی می‌کنیم.</p>
+			</li>
+			<li>
+				<p><strong>امنیت و دسترسی (Security &amp; Access):</strong>
+				مکانیزم‌های احراز هویت (Authentication)، مدیریت نقش‌ها (Role Management) و مجوزها (Permission) را برای کنترل دسترسی به داده‌ها پیاده‌سازی می‌کنیم.</p>
+			</li>
+		</ul>
+		<h1 id="موتور-محرکه-پردازش-و-منطق-backend-approach">2. موتور محرکه: پردازش و منطق (Backend-Approach)</h1>
+		<p>پس از اینکه خانه‌ای امن برای داده‌ها ساختیم، نوبت به قلب سیستم می‌رسد. <strong>Backend-Approach</strong>
+			جایی است که داده‌ها پردازش می‌شوند، منطق کسب و کار پیاده‌سازی می‌شود و ارتباط با دنیای بیرون برقرار می‌گردد. اینجا ما از <strong>خط لوله‌های داده (Data Pipelines/Orchestration)</strong>
+			با ابزارهایی مانند <strong>Apache Airflow</strong>
+			برای مدیریت جریان داده‌ها و از <strong>پلتفرم‌های داده مدرن (Modern Data Stack)</strong>
+			مانند <strong>dbt</strong>
+			برای تبدیل و مدیریت تحول داده‌ها استفاده می‌کنیم. همچنین <strong>استقرار مدل‌های یادگیری ماشین (MLOps/Model Deployment)</strong>
+			در این بخش اتفاق می‌افتد.</p>
+		<h2 id="db-side">Db-Side</h2>
+		<h3 id="الف.-دسترسی-به-داده-data-accessintegration">الف. دسترسی به داده (Data Access/Integration)</h3>
+		<ul>
+			<li><strong>اتصال به دیتابیس:</strong>
+			Backend باید بتواند به دیتابیس‌هایی که در بخش قبل ساختیم متصل شود. این شامل تنظیمات اتصال (مانند Local Host)، مدیریت خطاها و نگهداری اتصال است.</li>
+			<li><strong>پرس و جوهای CRUD:</strong>
+			Backend می‌تواند اطلاعات را از دیتابیس بخواند، تغییر دهد، اضافه کند یا حذف کند.</li>
+			<li><strong>لایه‌های ORM (Object-Relational Mapping):</strong>
+			برای سهولت کار با دیتابیس، از ORM استفاده می‌کنیم که جداول دیتابیس را به آبجکت‌های برنامه‌نویسی تبدیل می‌کند و مدیریت ارتباطات بین جداول پیچیده را آسان‌تر می‌سازد.</li>
+		</ul>
+		<h2 id="front-side">Front-Side</h2>
+		<h3 id="د.-استقرار-مدل-model-deployment">د. استقرار مدل (Model Deployment)</h3>
+		<p>اگر سیستم ما شامل هوش مصنوعی باشد، مدل‌های آموزش‌دیده در این بخش به دنیای واقعی وارد می‌شوند:</p>
+		<ul>
+			<li><strong>روش‌ها:</strong>
+			مدل‌ها را می‌توانیم از طریق <strong>REST API</strong>
+			(برای پیش‌بینی‌های لحظه‌ای)، <strong>Batch Inference</strong>
+			(برای پردازش دسته‌ای داده‌ها) یا <strong>Streaming Inference</strong>
+			(برای پردازش جریان بی‌وقفه داده‌ها) مستقر کنیم.</li>
+			<li><strong>ابزارها:</strong>
+			از ابزارهایی مانند <strong>FastAPI</strong>
+			(برای ساخت API)، <strong>TensorFlow Serving</strong>
+			یا <strong>TorchServe</strong>
+			(برای مدل‌های یادگیری عمیق) و <strong>BentoML</strong>
+			(برای بسته‌بندی و استقرار مدل‌ها) استفاده می‌کنیم.</li>
+		</ul>
+		<h3 id="ه.-نظارت-monitoring">ه. نظارت (Monitoring)</h3>
+		<p>استقرار مدل پایان کار نیست. ما باید مطمئن شویم که مدل‌ها در محیط عملیاتی به درستی کار می‌کنند:</p>
+		<ul>
+			<li><strong>بررسی عملکرد:</strong>
+			با ابزارهایی مانند <strong>Evidently AI</strong>
+			یا <strong>Arize</strong>، عملکرد مدل را در production زیر نظر می‌گیریم.</li>
+			<li><strong>مانیتورینگ:</strong>
+			مواردی مانند <strong>Data Drift</strong>
+			(تغییر در توزیع داده‌های ورودی)، <strong>Model Drift</strong>
+			(کاهش دقت مدل به مرور زمان) و <strong>کاهش عملکرد (Performance Drop)</strong>
+			را رصد می‌کنیم تا در صورت لزوم مدل را به‌روز کنیم.</li>
+		</ul>
+		<h3 id="ب.-دستورات-و-سفارش‌ها-طراحی-api-commands--orders">ب. دستورات و سفارش‌ها: طراحی API (Commands &amp; Orders)</h3>
+		<p>اینجا جایی است که Backend با Front-End و دیگر سرویس‌ها صحبت می‌کند:</p>
+		<ul>
+			<li><strong>طراحی API (GET/POST):</strong>
+			قوانینی برای اینکه چگونه Front-End درخواست بفرستد و Backend پاسخ دهد، تعریف می‌کنیم (مثلاً REST API).</li>
+			<li><strong>اعتبارسنجی درخواست‌ها:</strong>
+			بررسی می‌کنیم که آیا درخواست‌های دریافتی معتبر هستند یا خیر؛ آیا داده‌ها فرمت صحیح دارند؟</li>
+			<li><strong>پردازش داده و ارتباط با سرویس‌های دیگر:</strong>
+			درخواست‌ها را پردازش کرده و در صورت نیاز با سرویس‌های دیگر یا مدل‌های هوش مصنوعی (که در ادامه مستقر می‌شوند) ارتباط برقرار می‌کنیم.</li>
+		</ul>
+		<h2 id="inside-backend">Inside Backend</h2>
+		<h3 id="ج.-امنیت-security">ج. امنیت (Security)</h3>
+		<p>حفاظت از داده‌ها و سیستم در برابر دسترسی‌های غیرمجاز حیاتی است:</p>
+		<ul>
+			<li><strong>احراز هویت (Authentication):</strong>
+			تأیید هویت کاربران (مثلاً با نام کاربری و رمز عبور یا توکن).</li>
+			<li><strong>اعتبارسنجی (Authorization):</strong>
+			تعیین اینکه هر کاربر یا نقش (Role) به چه بخش‌هایی از سیستم دسترسی دارد.</li>
+			<li><strong>حفاظت از داده (Data Protection):</strong>
+			استفاده از رمزنگاری (Hashing)، اعتبارسنجی ورودی‌ها و مکانیزم‌های دفاعی در برابر حملات دیتابیس.</li>
+		</ul>
+		<h1 id="ویترین-جذاب-تجربه-کاربر-front-end-approach">3. ویترین جذاب: تجربه کاربر (Front-End-Approach)</h1>
+		<p>در نهایت، تمام این پیچیدگی‌های پشت صحنه باید به شکلی ساده، زیبا و کاربردی به کاربر نهایی نمایش داده شود. اینجاست که <strong>Front-End-Approach</strong>
+			و <strong>استقرار داده‌های تحلیلی و داشبوردها (BI Deployment)</strong>
+			با ابزارهایی مانند Tableau، Power BI، Metabase یا Superset وارد عمل می‌شوند.</p>
+		<h3 id="الف.-html-ساختار-صفحه">الف. HTML: ساختار صفحه</h3>
+		<p>HTML اسکلت اصلی هر صفحه وب را تشکیل می‌دهد:</p>
+		<ul>
+			<li><strong>متا دیتا (Metadata):</strong>
+			اطلاعات پنهان صفحه مانند تنظیمات اصلی (Core Config)، اطلاعات برای شبکه‌های اجتماعی (Social Media) و لینک به منابع خارجی (Resources Linking).</li>
+			<li><strong>محتوا (Content):</strong>
+			تقسیم‌بندی محتوا به بخش‌های مختلف (Sectioning)، دریافت ورودی متنی (Text Input) و نمایش رسانه‌ها (Media Input) مانند تصاویر و ویدیوها.</li>
+			<li><strong>طرح‌بندی (Layout):</strong>
+			تعیین جایگاه بخش‌های اصلی صفحه شامل سربرگ (Header)، بدنه (Body) و پاورقی (Footer).</li>
+		</ul>
+		<h3 id="ب.-css-زیبایی-و-استایل">ب. CSS: زیبایی و استایل</h3>
+		<p>CSS به صفحات ما ظاهر و زیبایی می‌بخشد:</p>
+		<ul>
+			<li><strong>انتخاب‌گرها (Selectors):</strong>
+			نحوه انتخاب عناصر HTML برای اعمال استایل به آنها (مثلاً Basic Selectors, Attribute Based).</li>
+			<li><strong>طراحی ویژگی‌ها (Property Design):</strong>
+			تنظیمات مربوط به متن (Text)، مدل جعبه‌ای (Box Model) برای تعیین ابعاد و فاصله عناصر، و طراحی پس‌زمینه (Background Design).</li>
+			<li><strong>چیدمان واکنش‌گرا (Responsive Page Layout):</strong>
+			مطمئن می‌شویم که صفحه ما در اندازه‌های مختلف (تلفن همراه، تبلت، دسکتاپ) به درستی و زیبایی نمایش داده شود، با استفاده از <code>Flexbox</code>، <code>Responsive</code>
+			و <code>Media Query</code>.</li>
+		</ul>
+		<h3 id="ج.-javascript-پویایی-و-تعامل">ج. JavaScript: پویایی و تعامل</h3>
+		<p>JavaScript به صفحات ما جان می‌بخشد و آنها را تعاملی می‌کند:</p>
+		<ul>
+			<li><strong>بخش اصلی (Main):</strong>
+			شامل تعریف متغیرها (Variable Design)، انواع داده (Types)، محدوده متغیرها (Scope) و کنترل جریان برنامه (Flow Control).</li>
+			<li><strong>برنامه‌نویسی شیءگرا (OOP):</strong>
+			استفاده از مفاهیم شیءگرا برای سازماندهی بهتر کد.</li>
+			<li><strong>ورودی/خروجی (I/O) و دستکاری DOM:</strong>
+			توانایی خواندن و نوشتن اطلاعات از صفحه و دستکاری عناصر HTML (DOM Manipulation) مانند <code>getElements</code>
+			برای انتخاب عناصر، <code>Modifying Elements</code>
+			برای تغییر ویژگی‌های آنها و <code>Create/Remove Elements</code>
+			برای ساخت یا حذف عناصر به صورت پویا.</li>
+		</ul></div>
+	</body>
+</html>
