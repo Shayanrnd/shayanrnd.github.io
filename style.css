@@ -22,6 +22,26 @@ body {
   margin: 30px auto;
   padding: 0 10px;
 }
+/* --- Mobile ---*/
+@media (max-width: 768px) {
+
+  .page-container {
+    flex-direction: column;
+  }
+
+  .timeline-outline {
+    order: 1;
+  }
+
+  .sidebar-left {
+    order: 2;
+  }
+
+  .grid {
+    order: 3;
+  }
+
+}
 
 .sidebar-left,
 .timeline-outline,
