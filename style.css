@@ -57,6 +57,15 @@ img {
 .main-content {
   min-width: 0;
 }
+@media (max-width: 768px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* CARDS / PANELS */
 .sidebar-left,
