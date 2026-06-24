@@ -39,11 +39,11 @@ body {
 
 /* LAYOUT */
 .page-container {
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 300px 1fr 250px;
+  grid-template-columns: 100px 1fr 100px;
   gap: 30px;
 }
 
