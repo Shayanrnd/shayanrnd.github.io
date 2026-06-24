@@ -4,202 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shayan Rahiminezhad's Portfolio</title>
-  <link rel="icon" href="./public/favicon.ico" sizes="32x32">
-  <link rel="stylesheet" href="./style.css">
+  
+  <style>
+    /* استایل‌های پایه */
+    body { font-family: 'Georgia', serif; background-color: #fcfcfc; color: #2d3436; margin: 0; line-height: 1.6; }
+    .navbar { background: #1e272e; color: #ffffff; padding: 20px 40px; border-bottom: 4px solid #2d3436; text-transform: uppercase; letter-spacing: 1px; text-align: center;}
+    .page-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 280px 1fr 240px; gap: 30px; }
+    
+    /* کارت‌ها و بخش‌ها */
+    .sidebar-left, .timeline-outline { background: #fff; border: 1px solid #e1e1e1; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .profile-image { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #dfe6e9; display: block; margin: 0 auto 15px; }
+    .card { background: #ffffff; border: 1px solid #e1e1e1; margin-bottom: 20px; }
+    .card img { width: 100%; height: 150px; object-fit: cover; }
+    .card-body { padding: 15px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    /* ریسپانسیو برای تبلت و موبایل */
+    @media (max-width: 1024px) {
+      .page-container { grid-template-columns: 1fr; }
+      .sidebar-left { order: -1; } /* سایدبار بره بالا */
+      .timeline-outline { order: 2; }
+      .grid { grid-template-columns: 1fr 1fr; } /* کارت‌ها دو ستونه */
+    }
+
+    @media (max-width: 600px) {
+      .navbar { padding: 15px; font-size: 0.9rem; }
+      .grid { grid-template-columns: 1fr; } /* کارت‌ها تک ستونه */
+      .typing-text { font-size: 1.5rem !important; }
+      .hero-steps { font-size: 0.9rem; }
+      .page-container { padding: 0 10px; margin: 20px auto; }
+      .typing-container { padding: 20px; }
+    }
+
+    /* سایر استایل‌ها برای حفظ ظاهر */
+    .section-title { font-size: 1.4rem; border-bottom: 2px solid #2d3436; padding-bottom: 5px; margin-top: 40px; }
+    .skill-tags span { font-size: 0.75rem; background: #f1f2f6; padding: 2px 6px; border: 1px solid #dcdde1; margin: 2px; display: inline-block; }
+    footer { text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #eee; font-size: 0.8rem; }
+    .social-links { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+    .social-links img { width: 25px; opacity: 0.6; }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="navbar-logo">Portfolio</div>
+    <div class="navbar-logo">Shayan Rahiminezhad | Portfolio</div>
   </nav>
 
-  <!-- MAIN LAYOUT -->
   <div class="page-container">
 
-    <!-- LEFT SIDEBAR -->
     <aside class="sidebar-left">
       <div class="profile-image-container">
         <img class="profile-image" src="./public/Profile_Image.png" alt="Dr. Shayan Rahiminezhad">
-        <p class="profile-desc"><b>Shayan Rahiminezhad</b></p>
-
+        <p class="profile-desc" style="text-align: center;"><b>Shayan Rahiminezhad</b></p>
         <div class="profile-bio">
-          <p>
-            <strong>Doctorate of Veterinary medicine</strong>
-            Science & Research branch Azad(Srbiau) University, Tehran, Iran
-          </p>
-          <p class="profile-bio-sub">
-            Enthusiast in Precision Livestock Farming(PLF)
-          </p>
-        </div>
-      </div>
-
-      <div class="progress-circles-container">
-        <!-- blocks -->
-        <div class="skill-box">
-          <div class="skill-title">DataScience Skills</div>
-          <div class="skill-tags">
-            <span>Excel</span>
-            <span>Pyside</span>
-            <span>Bash</span>
-            <span>Pandas Numpy</span>
-            <span>HTML CSS Js</span>
-            <span>Front-End Frameworks</span>
-          </div>
-        </div>
-
-        <div class="progress-circle red main-circle">
-          <svg viewBox="0 0 100 100">
-            <circle class="bg" cx="50" cy="50" r="45"></circle>
-            <circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 60;"></circle>
-          </svg>
-          <div class="percentage-text">10%</div>
-        </div>
-
-        <div class="skill-box">
-          <div class="skill-title">Interdisciplinary Skills</div>
-          <div class="skill-tags">
-            <span>Veterinary medicine</span>
-            <span>Infographics</span>
-            <span>Research</span>
-          </div>
-        </div>
-
-        <div class="progress-circle green main-circle">
-          <svg viewBox="0 0 100 100">
-            <circle class="bg" cx="50" cy="50" r="45"></circle>
-            <circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 62;"></circle>
-          </svg>
-          <div class="percentage-text">25%</div>
-        </div>
-
-        <div class="skill-box">
-          <div class="skill-title">Extra Skills</div>
-          <div class="skill-tags">
-            <span>A</span>
-            <span>B</span>
-            <span>C</span>
-          </div>
-        </div>
-
-        <div class="progress-circle blue main-circle">
-          <svg viewBox="0 0 100 100">
-            <circle class="bg" cx="50" cy="50" r="45"></circle>
-            <circle class="progress" cx="50" cy="50" r="45" style="stroke-dashoffset: 28.3;"></circle>
-          </svg>
-          <div class="percentage-text">30%</div>
+          <p><strong>Doctorate of Veterinary medicine</strong><br>Science & Research branch Azad(Srbiau) University</p>
         </div>
       </div>
     </aside>
 
-    <!-- MIDDLE CONTENT -->
     <main class="main-content">
       <section class="typing-container">
-        <h1 class="typing-text">Let's approach DataScience towards Veterinary medicine</h1>
-        <p class="hero-steps">
-          1)Collect <br>
-          2)Model <br>
-          3)Deploy
-        </p>
+        <h1 class="typing-text">Bridging DataScience & Veterinary Medicine</h1>
+        <p class="hero-steps">1) Collect &nbsp; 2) Model &nbsp; 3) Deploy</p>
       </section>
-      <h2 class="section-title">Recent Outside Projects</h2>
+
+      <h2 class="section-title">Projects</h2>
       <div class="grid">
-      <h2 class="section-title">Recent DataScience Projects</h2>
-      <div class="grid">
-        <div class="card card-blue">
-          <img src="./public/Lameness.jpeg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 1</h3>
-            <p>Model Lameness (Toe-In Toe-Out Classification) with OpenMMLab</p>
+          <div class="card card-blue">
+            <img src="./public/Lameness.jpeg" alt="Project">
+            <div class="card-body"><h3>Project 1</h3><p>Model Lameness (Toe-In Toe-Out Classification)</p></div>
           </div>
-        </div>
-
-        <div class="card card-blue">
-          <div class="card-body">
-            <h3>Project 2</h3>
-            <p>Clinic & Hospital Management System (Offline part)</p>
+          <div class="card card-blue">
+            <div class="card-body"><h3>Project 2</h3><p>Clinic & Hospital Management System</p></div>
           </div>
-        </div>
-
-        <div class="card card-blue">
-          <img src="./public/Crowdtesting.jpg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 3</h3>
-            <p>Crowdsource from Veterinary aspects</p>
+          <div class="card card-blue">
+            <img src="./public/Crowdtesting.jpg" alt="Project">
+            <div class="card-body"><h3>Project 3</h3><p>Crowdsource from Veterinary aspects</p></div>
           </div>
-        </div>
-      <h2 class="section-title">Recent Outside Projects</h2>
-      <div class="grid">
-        <div class="card card-blue">
-          <img src="./public/Diss.jpeg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 4</h3>
-            <p>Bromelain Neuroprotective effects investigation on Cerebellum after REM Sleep Deprivation in Rat</p>
-          </div>
-        </div>
-
-        <div class="card card-blue">
-          <img src="./public/Infographics.jpg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 5</h3>
-            <p>Infographics Project</p>
-          </div>
-        </div>
-
-        <div class="card card-blue">
-          <img src="./public/features-of-hospital-management-system.jpg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 6</h3>
-            <p>Data Collection first issue in Veterinary medicine vs all others medicine</p>
-          </div>
-        </div>
-
-        <div class="card card-blue">
-          <img src="./public/LanguageLearning.webp" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 7</h3>
-            <p>Articulation in new era (AI)</p>
-          </div>
-        </div>
-        <div class="card card-blue">
-          <img src="./public/latex1.jpg" alt="Project Image">
-          <div class="card-body">
-            <h3>Project 8</h3>
-            <p>Digital Data & Annotation Data</p>
-          </div>
-        </div>
-      </div>
-        <div class="card card-blue">
-          <div class="card-body">
-            <h3>Project 9</h3>
-            <p>TOEFL Preparation</p>
-          </div>
-        </div>
       </div>
 
       <footer>
         <p>Let's collaborate!</p>
         <div class="social-links">
-          <a href="https://x.com/shayanrnd99"><img src="./public/Screenshot From 2026-05-26 13-10-03.png" alt="Twitter"></a>
-          <a href="https://t.me/shayanrnd"><img src="./public/Screenshot From 2026-05-29 17-30-20.png" alt="Telegram"></a>
-          <a href="mailto:shayanrnd@yahoo.com?"><img src="./public/Screenshot From 2026-05-29 17-37-47.png" alt="Email"></a>
-          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-35-55.png" alt="Instagram"></a>
-          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-32-40.png" alt="GitHub"></a>
-          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-34-02.png" alt="LinkedIn"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-26 13-10-03.png" alt="Twitter"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-30-20.png" alt="Telegram"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-37-47.png" alt="Email"></a>
         </div>
-        <p>&copy; 2026 Shayan's Portfolio</p>
       </footer>
     </main>
 
-    <!-- RIGHT SIDEBAR -->
     <aside class="timeline-outline">
       <h2 class="outline-title">Outline</h2>
-      <ul class="timeline">
-        <li><a href="#intro"><span>01</span>Introduction</a></li>
-        <li><a href="#step1"><span>02</span>Planning</a></li>
-        <li><a href="#step2"><span>03</span>Design</a></li>
-        <li><a href="#step3"><span>04</span>Implementation</a></li>
-        <li><a href="#conclusion"><span>05</span>Conclusion</a></li>
+      <ul class="timeline" style="list-style: none; padding: 0;">
+        <li>01 Introduction</li>
+        <li>02 Planning</li>
+        <li>03 Design</li>
       </ul>
     </aside>
 
