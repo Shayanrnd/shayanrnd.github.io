@@ -23,25 +23,50 @@ body {
   padding: 0 10px;
 }
 /* --- Mobile ---*/
-@media (max-width: 768px) {
-
+/* اصلاح ریسپانسیو برای موبایل */
+@media (max-width: 600px) {
+  
+  /* چیدمان کلی: ستون‌ها را مرتب می‌کنیم */
   .page-container {
     flex-direction: column;
+    padding: 10px; /* فضای تنفس بیشتر */
+    gap: 15px;
   }
 
-  .timeline-outline {
-    order: 1;
-  }
-
+  /* سایدبار: عرض ثابت 150px را حذف می‌کنیم تا تمام عرض صفحه را بگیرد */
   .sidebar-left {
+    order: 1; /* اول نمایش داده شود */
+    width: 100%; /* کاملا پر شود */
+    box-sizing: border-box; /* برای محاسبه درست پدینگ */
+  }
+
+  /* تایم‌لاین: زیر سایدبار */
+  .timeline-outline {
     order: 2;
   }
 
+  /* گرید پروژه‌ها: تغییر از 3 ستون به 1 ستون */
   .grid {
     order: 3;
+    grid-template-columns: 1fr; /* یک ستون تکی */
+    gap: 15px;
   }
 
+  /* اصلاح هدر: روی موبایل بهتر است لوگو/سرچ انعطاف‌پذیر باشد */
+  header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+  }
+
+  /* کوچک کردن فونت برای موبایل */
+  .typing-text {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
+
 
 .sidebar-left,
 .timeline-outline,
