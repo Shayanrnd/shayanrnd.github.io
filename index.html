@@ -9,7 +9,7 @@
     /* استایل‌های پایه */
     body { font-family: 'Georgia', serif; background-color: #fcfcfc; color: #2d3436; margin: 0; line-height: 1.6; }
     .navbar { background: #1e272e; color: #ffffff; padding: 20px 40px; border-bottom: 4px solid #2d3436; text-transform: uppercase; letter-spacing: 1px; text-align: center;}
-    .page-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 280px 1fr 240px; gap: 30px; }
+    .page-container { max-width: 1200px; margin: 0px auto; padding: 0 20px; display: grid; grid-template-columns: 280px 1fr 240px; gap: 30px; }
     
     /* کارت‌ها و بخش‌ها */
     .sidebar-left, .timeline-outline { background: #fff; border: 1px solid #e1e1e1; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
@@ -23,13 +23,14 @@
     @media (max-width: 1024px) {
       .page-container { grid-template-columns: 1fr; }
       .sidebar-left { order: -1; } /* سایدبار بره بالا */
-      .timeline-outline { order: 2; }
+      .timeline-outline { display: none; }
       .grid { grid-template-columns: 1fr 1fr; } /* کارت‌ها دو ستونه */
     }
 
     @media (max-width: 600px) {
       .navbar { padding: 15px; font-size: 0.9rem; }
       .grid { grid-template-columns: 1fr; } /* کارت‌ها تک ستونه */
+      .timeline-outline { display: none; }
       .typing-text { font-size: 1.5rem !important; }
       .hero-steps { font-size: 0.9rem; }
       .page-container { padding: 0 10px; margin: 20px auto; }
@@ -86,9 +87,15 @@
       <footer>
         <p>Let's collaborate!</p>
         <div class="social-links">
-          <a href="#"><img src="./public/Screenshot From 2026-05-26 13-10-03.png" alt="Twitter"></a>
-          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-30-20.png" alt="Telegram"></a>
-          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-37-47.png" alt="Email"></a>
+          <a href="https://x.com/shayanrnd99"><img src="./public/Screenshot From 2026-05-26 13-10-03.png" alt="Twitter"></a>
+          <a href="https://t.me/shayanrnd"><img src="./public/Screenshot From 2026-05-29 17-30-20.png" alt="Telegram"></a>
+          <a href="mailto:shayanrnd@yahoo.com?"><img src="./public/Screenshot From 2026-05-29 17-37-47.png" alt="Email"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-35-55.png" alt="Instagram"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-32-40.png" alt="GitHub"></a>
+          <a href="#"><img src="./public/Screenshot From 2026-05-29 17-34-02.png" alt="LinkedIn"></a>
+        </div>
+        <p>&copy; 2026 Shayan's Portfolio</p>
+      </footer>
         </div>
       </footer>
     </main>
