@@ -1,0 +1,142 @@
+			/* تعریف متغیرهای رنگی برای هماهنگی بیشتر */
+			:root {
+				--primary-color: #0a3d62; /* آبی نفتی عمیق */
+				--secondary-color: #3c6382; /* آبی ملایم */
+				--accent-color: #38ada9; /* سبز-آبی مدرن */
+				--bg-color: #f8faff;
+				--card-bg: #ffffff;
+				--text-main: #2d3436;
+				--text-muted: #636e72;
+			}
+			
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Georgia', serif;
+				background-color: var(--bg-color);
+				color: var(--text-main);
+				margin: 0;
+				line-height: 1.6;
+			}
+			
+			/* نوار ناوبری با گرادینت */
+			.navbar {
+				background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+				color: #ffffff;
+				padding: 25px 40px;
+				box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+				text-align: center;
+				font-weight: bold;
+				letter-spacing: 1.5px;
+			}
+			.page-container {
+				display: grid;
+				grid-template-columns: 300px 1fr 250px;
+				gap: 0; /* حذف فاصله بین ستون‌ها */
+				width: 100%;
+				min-height: calc(100vh - 65px); /* پر کردن کل ارتفاع صفحه */
+			}
+			
+			/* استایل سایدبار و کارت‌ها */
+			.sidebar-left, .timeline-outline {
+				background: var(--card-bg);
+				border: none;
+				border-radius: 15px;
+				padding: 25px;
+				box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+			}
+			
+			.profile-image {
+				width: 130px; height: 130px;
+				border-radius: 50%;
+				border: 4px solid var(--accent-color);
+				display: block;
+				margin: 0 auto 20px;
+				padding: 5px;
+				background: white;
+			}
+			
+			.profile-desc { text-align: center; color: var(--primary-color); font-size: 1.1rem; }
+			
+			/* هدر اصلی با ظاهر مدرن */
+			.typing-container {
+				background: #ffffff;
+				padding: 40px;
+				border-radius: 15px;
+				border-left: 8px solid var(--accent-color);
+				margin-bottom: 30px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+			}
+			
+			.typing-text { font-size: 2.2rem; color: var(--primary-color); margin: 0; }
+			.hero-steps { font-size: 1.1rem; color: var(--accent-color); font-weight: bold; margin-top: 10px; }
+			
+			/* گرید کارت‌ها */
+			.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+			
+			.card {
+				background: var(--card-bg);
+				border-radius: 12px;
+				overflow: hidden;
+				transition: all 0.3s ease;
+				border: 1px solid #edf2f7;
+				box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+			}
+			
+			.card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+				border-color: var(--accent-color);
+			}
+			
+			.card img { width: 160px; height: 160px; object-fit: cover; }
+			.card-body { padding: 18px; }
+			.card-body h3 { margin: 0 0 10px; font-size: 1.05rem; color: var(--primary-color); }
+			.card-body p { font-size: 0.9rem; color: var(--text-muted); }
+			
+			.section-title {
+				font-size: 1.5rem;
+				color: var(--primary-color);
+				border-bottom: 3px solid var(--accent-color);
+				display: inline-block;
+				margin: 40px 0 20px;
+			}
+			
+			/* مهارت‌ها */
+			.skill-tags span {
+				font-size: 0.8rem;
+				background: #eef2f7;
+				color: var(--secondary-color);
+				padding: 4px 10px;
+				border-radius: 20px;
+				margin: 3px;
+				display: inline-block;
+				font-weight: 500;
+			}
+			
+			/* فوتر */
+			footer { text-align: center; margin-top: 60px; padding: 40px; border-top: 1px solid #eee; }
+			.social-links { display: flex; justify-content: center; gap: 20px; }
+			.social-links img {
+				width: 30px;
+				filter: grayscale(100%);
+				transition: 0.3s;
+				opacity: 0.6;
+			}
+			.social-links img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.2); }
+			
+			/* --- RESPONSIVE --- */
+			
+			@media (max-width: 1024px) {
+				.page-container { grid-template-columns: 1fr; }
+				.grid { grid-template-columns: 1fr 1fr; }
+				.sidebar-left { order: -1; }
+			}
+			
+			@media (max-width: 600px) {
+				/* حذف آوت‌لاین در موبایل */
+				.timeline-outline { display: none; }
+				
+				.grid { grid-template-columns: 1fr; }
+				.typing-text { font-size: 1.6rem !important; }
+				.navbar { padding: 15px; font-size: 0.9rem; }
+				.page-container { margin: 20px auto; padding: 0 15px; }
+			}
