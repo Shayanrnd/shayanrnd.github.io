@@ -1,19 +1,22 @@
-/* Fetch Project Articles */
+  async function loadArticles() {
+    try {
+      const response = await fetch('./All_projects.json');
+      const articles = await response.json();
+      const list = document.getElementById('article-list');
 
-fetch('All_projects.json')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById('articles-list');
-        data.forEach(article => {
-          const li = document.createElement('li');
-          const a = document.createElement('a');
-          a.href = article.url;
-          a.textContent = article.title;
-          a.target = '_blank';
-          li.appendChild(a);
-          list.appendChild(li);
-        });
-      })
-      .catch(error => {
-        console.error('Error loading articles:', error);
+      articles.forEach(article => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        
+        a.href = article.url;
+        a.textContent = article.title;
+        
+        li.appendChild(a);
+        list.appendChild(li);
       });
+    } catch (e) {
+      console.error("خطا در بارگذاری مقالات:", e);
+    }
+  }
+  loadArticles();
+
