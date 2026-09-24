@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>وب‌سایت شخصی من</title>
+    <link>https://shayanrnd.com/</link>
+    <description></description>
+    <language>fa-IR</language>
+    <lastBuildDate>Tue, 15 Sep 2026 10:00:00 +0330</lastBuildDate>
+
+    <item>
+      <title>عنوان اولین مطلب</title>
+      <link>https://shayanrnd.com/content</link>
+      <guid isPermaLink="true">
+        https://shayanrnd.com/posts/first-post.html
+      </guid>
+      <description>
+        خلاصه‌ای از محتوای اولین مطلب سایت.
+      </description>
+      <pubDate>Tue, 15 Sep 2026 09:00:00 +0330</pubDate>
+    </item>
+
+  </channel>
+</rss>
+
